@@ -11,6 +11,7 @@
 		7CB99CAE2A4B76E300786DEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB99CAD2A4B76E300786DEE /* ContentView.swift */; };
 		7CB99CB02A4B76E400786DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB99CAF2A4B76E400786DEE /* Assets.xcassets */; };
 		7CB99CB32A4B76E400786DEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */; };
+		7CB99CBA2A4B770D00786DEE /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB99CB92A4B770D00786DEE /* Recommendations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		7CB99CAD2A4B76E300786DEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7CB99CAF2A4B76E400786DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7CB99CB92A4B770D00786DEE /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				7CB99CAB2A4B76E300786DEE /* RecipeRecommenderApp.swift */,
 				7CB99CAD2A4B76E300786DEE /* ContentView.swift */,
+				7CB99CB92A4B770D00786DEE /* Recommendations.swift */,
 				7CB99CAF2A4B76E400786DEE /* Assets.xcassets */,
 				7CB99CB12A4B76E400786DEE /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CB99CAE2A4B76E300786DEE /* ContentView.swift in Sources */,
+				7CB99CBA2A4B770D00786DEE /* Recommendations.swift in Sources */,
 				7CB99CAC2A4B76E300786DEE /* RecipeRecommenderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
