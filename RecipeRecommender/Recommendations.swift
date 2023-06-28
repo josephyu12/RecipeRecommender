@@ -28,7 +28,6 @@ struct Recommendations: View {
             
             ScrollView {
                 
-                
                 VStack(alignment: .leading) {
                     
                     ZStack(alignment: .topTrailing) {
@@ -57,11 +56,7 @@ struct Recommendations: View {
                         
                     }
                     
-                    
-                    
                     HStack {
-                        
-                        
                         
                         Text("Creamy Chicken Alfredo Pasta")
                             .font(.title2)
@@ -73,9 +68,9 @@ struct Recommendations: View {
                     
                 }
                 .padding()
-                .background(Rectangle().foregroundColor(.white)
+                .background(Rectangle().foregroundColor(Color("light-gray"))
                     .cornerRadius(15)
-                    .shadow(radius:15))
+                    .shadow(radius: 15))
                 .padding()
                 
                 VStack(alignment: .leading) {
@@ -122,7 +117,7 @@ struct Recommendations: View {
                     
                 }
                 .padding()
-                .background(Rectangle().foregroundColor(.white)
+                .background(Rectangle().foregroundColor(Color("light-gray"))
                     .cornerRadius(15)
                     .shadow(radius:15))
                 .padding()
