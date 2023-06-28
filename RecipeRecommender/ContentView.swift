@@ -21,6 +21,7 @@ struct ContentView: View {
     }
        init() {
            UITabBar.appearance().barTintColor = UIColor(Color(.white)) // custom color.
+           
        }
 }
 
