@@ -128,13 +128,11 @@ struct Recommendations: View {
                 
             }
         }
-        .onAppear {
-        Task {
-            await server.testGetData()
-        }
-      
-    }
         
+    }
+    
+    init() {
+        server.testGetData()
     }
 
 }
