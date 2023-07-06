@@ -9,12 +9,6 @@ import Foundation
 
 import PostgresClientKit
 
-import PostgresNIO
-import NIOPosix
-import Logging
-
-import PostgresKit
-
 class TestSQL: ObservableObject {
     
 //        func testGetData() async {
@@ -60,36 +54,6 @@ class TestSQL: ObservableObject {
 //            }
 //        }
     
-    
-    
-    
-    //    func testGetData() {
-    //
-    //        let configuration = SQLPostgresConfiguration(
-    //            hostname: "52.45.244.51",
-    //            port: 9753,
-    //            username: "postgres",
-    //            password: ProcessInfo.processInfo.environment["SQL-PASSWORD"],
-    //            database: "postgres",
-    //            tls: .disable
-    //        )
-    //
-    //
-    //        let eventLoopGroup: EventLoopGroup = ...
-    //        defer { try! eventLoopGroup.syncShutdown() }
-    //
-    //        let pools = EventLoopGroupConnectionPool(
-    //            source: PostgresConnectionSource(configuration: configuration),
-    //            on: eventLoopGroup
-    //        )
-    //        defer { pools.shutdown() }
-    //
-    //    }
-    
-    
-    
-    
-    
     func testGetData() {
 
         do {
@@ -123,19 +87,6 @@ class TestSQL: ObservableObject {
                 print(columns[2])
             }
 
-            //        for row in cursor {
-            //            let columns = try row.get().columns
-            //            let city = try columns[0].string()
-            //            let tempLo = try columns[1].int()
-            //            let tempHi = try columns[2].int()
-            //            let prcp = try columns[3].optionalDouble()
-            //            let date = try columns[4].date()
-            //
-            //            print("""
-            //                \(city) on \(date): low: \(tempLo), high: \(tempHi), \
-            //                precipitation: \(String(describing: prcp))
-            //                """)
-            //        }
         } catch {
             print(error) // better error handling goes here
         }
