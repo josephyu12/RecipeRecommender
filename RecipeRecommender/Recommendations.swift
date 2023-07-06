@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Recommendations: View {
+    
+    @ObservedObject var server = TestSQL()
+    
     let image = Image("examplerecipe")
     
     var body: some View {
@@ -126,11 +129,12 @@ struct Recommendations: View {
             }
         }
         
-        
-        
     }
     
-    
+    init() {
+        server.testGetData()
+    }
+
 }
 
 struct Recommendations_Previews: PreviewProvider {
