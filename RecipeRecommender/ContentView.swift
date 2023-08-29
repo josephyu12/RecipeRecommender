@@ -8,6 +8,11 @@
 import SwiftUI
 import Auth0
 
+extension UIScreen{
+    static let screenWidth = UIScreen.main.bounds.size.width
+    static let screenHeight = UIScreen.main.bounds.size.height
+    static let screenSize = UIScreen.main.bounds.size
+}
 
 struct ContentView: View {
 
@@ -16,23 +21,81 @@ struct ContentView: View {
     var body: some View {
 
         if let user = self.user {
+        
+            VStack(spacing: 0) {
+                
+                // red header with app name text, takes up the top section only
+                
+                ZStack{
+                    Color("redcolor").ignoresSafeArea()
+                    HStack {
+                        
+                        Text("Unified Grocery App").foregroundColor(Color.black)
+                            .padding(.leading).font(.system(size:24))
 
-            VStack {
-                Button("Logout", action: self.logout)
-//                TabView {
-//                    Recommendations()
-//                        .tabItem() {
-//                            Image(systemName: "house")
-//                            Text("Home")
-//                        }
-//
-//                }
+                        Spacer()
 
-                Text(user.name)
-                Text(user.id)
-                Text(user.email)
-
+                    }
+                }
+                .padding(0.0)
+                .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/20)
+                
+                // main body, a TabView that allows access between different pages
+                
+                TabView {
+                    Group {
+                        
+                        // link to home page
+                        Recommendations()
+                            .padding(0.0)
+                            .tabItem() {
+                                Image(systemName: "house")
+                                Text("Home")
+                            }
+                        
+                        // link to all recipes page
+                        Recommendations()
+                            .tabItem() {
+                                Image(systemName: "list.clipboard")
+                                Text("Recipes")
+                            }
+                        
+                        // link to fridge page with ingredients
+                        Recommendations()
+                            .tabItem() {
+                                Image(systemName: "takeoutbag.and.cup.and.straw.fill")
+                                Text("Fridge")
+                            }
+                        
+                        // link to edit page to add ingredients
+                        Recommendations()
+                            .tabItem() {
+                                Image(systemName: "plus")
+                                Text("Add")
+                                
+                            }
+                    }
+                    
+                }
             }
+            
+        
+//            VStack {
+//                Button("Logout", action: self.logout)
+////                TabView {
+////                    Recommendations()
+////                        .tabItem() {
+////                            Image(systemName: "house")
+////                            Text("Home")
+////                        }
+////
+////                }
+//
+//                Text(user.name)
+//                Text(user.id)
+//                Text(user.email)
+
+  //          }
         } else {
             VStack {
                 Button("Login", action: self.login)
