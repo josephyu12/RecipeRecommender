@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Recommendations: View {
+struct RecommendationsView: View {
     
     @ObservedObject var server = TestSQL()
     
@@ -137,8 +137,8 @@ struct Recommendations: View {
 
 }
 
-struct Recommendations_Previews: PreviewProvider {
+struct RecommendationsView_Previews: PreviewProvider {
     static var previews: some View {
-        Recommendations()
+        RecommendationsView()
     }
 }
