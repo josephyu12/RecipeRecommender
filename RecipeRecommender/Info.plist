@@ -4,6 +4,8 @@
 <dict>
 	<key>GIDClientID</key>
 	<string>505818238995-1753rcs67f3i9fdgdkjonv5ukoea2o45.apps.googleusercontent.com</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) requires permission to scan files</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
