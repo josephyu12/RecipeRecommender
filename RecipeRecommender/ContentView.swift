@@ -46,7 +46,7 @@ struct ContentView: View {
                     Group {
                         
                         // link to home page
-                        Recommendations()
+                        RecommendationsView()
                             .padding(0.0)
                             .tabItem() {
                                 Image(systemName: "house")
@@ -54,21 +54,21 @@ struct ContentView: View {
                             }
                         
                         // link to all recipes page
-                        Recommendations()
+                        AllRecipesView()
                             .tabItem() {
                                 Image(systemName: "list.clipboard")
                                 Text("Recipes")
                             }
                         
                         // link to fridge page with ingredients
-                        Recommendations()
+                        FridgeView()
                             .tabItem() {
                                 Image(systemName: "takeoutbag.and.cup.and.straw.fill")
                                 Text("Fridge")
                             }
                         
                         // link to edit page to add ingredients
-                        Recommendations()
+                        RecommendationsView()
                             .tabItem() {
                                 Image(systemName: "plus")
                                 Text("Add")

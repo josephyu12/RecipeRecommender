@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7C379EEE2A4C8D7A006A9451 /* TestSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C379EED2A4C8D7A006A9451 /* TestSQL.swift */; };
 		7C379EF12A4C8E4B006A9451 /* PostgresClientKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C379EF02A4C8E4B006A9451 /* PostgresClientKit */; };
+		7C3E0C262AA6654B00F22137 /* AllRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E0C252AA6654B00F22137 /* AllRecipesView.swift */; };
+		7C3E0C282AA6655F00F22137 /* FridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E0C272AA6655F00F22137 /* FridgeView.swift */; };
 		7C564ECA2A68662300942014 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 7C564EC92A68662300942014 /* Auth0 */; };
 		7C564ECC2A68668D00942014 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C564ECB2A68668D00942014 /* Auth0.plist */; };
 		7C564ECE2A68686B00942014 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C564ECD2A68686B00942014 /* User.swift */; };
@@ -16,11 +18,13 @@
 		7CB99CAE2A4B76E300786DEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB99CAD2A4B76E300786DEE /* ContentView.swift */; };
 		7CB99CB02A4B76E400786DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB99CAF2A4B76E400786DEE /* Assets.xcassets */; };
 		7CB99CB32A4B76E400786DEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */; };
-		7CB99CBA2A4B770D00786DEE /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB99CB92A4B770D00786DEE /* Recommendations.swift */; };
+		7CB99CBA2A4B770D00786DEE /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB99CB92A4B770D00786DEE /* RecommendationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C379EED2A4C8D7A006A9451 /* TestSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSQL.swift; sourceTree = "<group>"; };
+		7C3E0C252AA6654B00F22137 /* AllRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRecipesView.swift; sourceTree = "<group>"; };
+		7C3E0C272AA6655F00F22137 /* FridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeView.swift; sourceTree = "<group>"; };
 		7C564EC72A68658800942014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7C564ECB2A68668D00942014 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		7C564ECD2A68686B00942014 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -29,7 +33,7 @@
 		7CB99CAD2A4B76E300786DEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7CB99CAF2A4B76E400786DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7CB99CB92A4B770D00786DEE /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
+		7CB99CB92A4B770D00786DEE /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,9 @@
 				7C564ECB2A68668D00942014 /* Auth0.plist */,
 				7CB99CAB2A4B76E300786DEE /* RecipeRecommenderApp.swift */,
 				7CB99CAD2A4B76E300786DEE /* ContentView.swift */,
-				7CB99CB92A4B770D00786DEE /* Recommendations.swift */,
+				7C3E0C252AA6654B00F22137 /* AllRecipesView.swift */,
+				7C3E0C272AA6655F00F22137 /* FridgeView.swift */,
+				7CB99CB92A4B770D00786DEE /* RecommendationsView.swift */,
 				7C564ECD2A68686B00942014 /* User.swift */,
 				7C379EEC2A4C8D55006A9451 /* Backend */,
 				7CB99CAF2A4B76E400786DEE /* Assets.xcassets */,
@@ -174,7 +180,9 @@
 			files = (
 				7C379EEE2A4C8D7A006A9451 /* TestSQL.swift in Sources */,
 				7CB99CAE2A4B76E300786DEE /* ContentView.swift in Sources */,
-				7CB99CBA2A4B770D00786DEE /* Recommendations.swift in Sources */,
+				7CB99CBA2A4B770D00786DEE /* RecommendationsView.swift in Sources */,
+				7C3E0C262AA6654B00F22137 /* AllRecipesView.swift in Sources */,
+				7C3E0C282AA6655F00F22137 /* FridgeView.swift in Sources */,
 				7C564ECE2A68686B00942014 /* User.swift in Sources */,
 				7CB99CAC2A4B76E300786DEE /* RecipeRecommenderApp.swift in Sources */,
 			);
