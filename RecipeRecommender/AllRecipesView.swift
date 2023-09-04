@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AllRecipesView: View {
+    
+    @ObservedObject var server = Server()
+    
     var body: some View {
         VStack {
             HStack{
@@ -90,6 +93,9 @@ struct AllRecipesView: View {
                 
             }.shadow(radius: 15)
         }
+    }
+    init() {
+        server.getAllRecipes()
     }
 }
 
