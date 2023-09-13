@@ -20,6 +20,7 @@
 		7CB99CB02A4B76E400786DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB99CAF2A4B76E400786DEE /* Assets.xcassets */; };
 		7CB99CB32A4B76E400786DEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */; };
 		7CB99CBA2A4B770D00786DEE /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB99CB92A4B770D00786DEE /* RecommendationsView.swift */; };
+		7CEE058D2AB14D5E00F9BF1D /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE058C2AB14D5E00F9BF1D /* Structs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7CB99CAF2A4B76E400786DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7CB99CB92A4B770D00786DEE /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
+		7CEE058C2AB14D5E00F9BF1D /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				7C379EED2A4C8D7A006A9451 /* TestSQL.swift */,
 				7C3E0C292AA6703900F22137 /* Server.swift */,
+				7CEE058C2AB14D5E00F9BF1D /* Structs.swift */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEE058D2AB14D5E00F9BF1D /* Structs.swift in Sources */,
 				7C379EEE2A4C8D7A006A9451 /* TestSQL.swift in Sources */,
 				7CB99CAE2A4B76E300786DEE /* ContentView.swift in Sources */,
 				7CB99CBA2A4B770D00786DEE /* RecommendationsView.swift in Sources */,

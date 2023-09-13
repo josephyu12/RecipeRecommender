@@ -29,67 +29,102 @@ struct AllRecipesView: View {
             
             ScrollView {
                 
-                HStack {
-                        
-                        Text("Creamy Chicken Alfredo Pasta")
-                            .font(.title3)
-                            .multilineTextAlignment(.leading)
-                        
-                        Spacer()
+                ForEach(server.allRecipes) {item in
                     
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15, style: .circular)
-                            .frame(width: 30, height: 55)
-                            .foregroundColor(.white)
-                        
-                        VStack {
-                            Text("10")
-                                .font(.subheadline)
-                            
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(.green)
-                            
-                        }
-                        
-                    }
+                                    HStack {
+                    
+                                        Text(item.name)
+                                                .font(.title3)
+                                                .multilineTextAlignment(.leading)
+                    
+                                            Spacer()
+                    
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 15, style: .circular)
+                                                .frame(width: 30, height: 55)
+                                                .foregroundColor(.white)
+                    
+                                            VStack {
+                                                Text("10")
+                                                    .font(.subheadline)
+                    
+                                                Image(systemName: "circle.fill")
+                                                    .foregroundColor(.green)
+                    
+                                            }
+                    
+                                        }
+                    
+                                    }
+                                    .padding(.vertical, -8.0)
+                                    .padding()
+                                    .background(Rectangle().foregroundColor(Color("light-gray"))
+                                        .cornerRadius(15))
+                                    .padding()
                     
                 }
-                .padding(.vertical, -8.0)
-                .padding()
-                .background(Rectangle().foregroundColor(Color("light-gray"))
-                    .cornerRadius(15))
-                .padding()
                 
-                HStack {
-                        
-                        Text("Creamy Chicken Alfredo Pasta")
-                            .font(.title3)
-                            .multilineTextAlignment(.leading)
-                        
-                        Spacer()
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15, style: .circular)
-                            .frame(width: 30, height: 55)
-                            .foregroundColor(.white)
-                        
-                        VStack {
-                            Text("10")
-                                .font(.subheadline)
-                            
-                            Image(systemName: "circle.fill")
-                                .foregroundColor(.green)
-                            
-                        }
-                        
-                    }
-                    
-                }
-                .padding(.vertical, -8.0)
-                .padding()
-                .background(Rectangle().foregroundColor(Color("light-gray"))
-                    .cornerRadius(15))
-                .padding()
+//                HStack {
+//
+//                        Text("Creamy Chicken Alfredo Pasta")
+//                            .font(.title3)
+//                            .multilineTextAlignment(.leading)
+//
+//                        Spacer()
+//
+//                    ZStack {
+//                        RoundedRectangle(cornerRadius: 15, style: .circular)
+//                            .frame(width: 30, height: 55)
+//                            .foregroundColor(.white)
+//
+//                        VStack {
+//                            Text("10")
+//                                .font(.subheadline)
+//
+//                            Image(systemName: "circle.fill")
+//                                .foregroundColor(.green)
+//
+//                        }
+//
+//                    }
+//
+//                }
+//                .padding(.vertical, -8.0)
+//                .padding()
+//                .background(Rectangle().foregroundColor(Color("light-gray"))
+//                    .cornerRadius(15))
+//                .padding()
+//
+//                HStack {
+//
+//                        Text("Creamy Chicken Alfredo Pasta")
+//                            .font(.title3)
+//                            .multilineTextAlignment(.leading)
+//
+//                        Spacer()
+//
+//                    ZStack {
+//                        RoundedRectangle(cornerRadius: 15, style: .circular)
+//                            .frame(width: 30, height: 55)
+//                            .foregroundColor(.white)
+//
+//                        VStack {
+//                            Text("10")
+//                                .font(.subheadline)
+//
+//                            Image(systemName: "circle.fill")
+//                                .foregroundColor(.green)
+//
+//                        }
+//
+//                    }
+//
+//                }
+//                .padding(.vertical, -8.0)
+//                .padding()
+//                .background(Rectangle().foregroundColor(Color("light-gray"))
+//                    .cornerRadius(15))
+//                .padding()
                 
             }.shadow(radius: 15)
         }

@@ -132,7 +132,7 @@ struct RecommendationsView: View {
     }
     
     init() {
-        server.testGetData()
+//        server.testGetData()
     }
 
 }
