@@ -17,6 +17,8 @@ extension UIScreen{
 struct ContentView: View {
 
     @State var user: User?
+    @State private var showScannerSheet = false
+    @State private var texts:[ScanData] = []
 
     var body: some View {
 
@@ -42,6 +44,44 @@ struct ContentView: View {
                 
                 // main body, a TabView that allows access between different pages
                 
+                
+                // testing for scanner
+                
+                
+                NavigationView{
+                            VStack{
+                                if texts.count > 0{
+                                    List{
+                                        ForEach(texts){text in
+                                            NavigationLink(
+                                                destination:ScrollView{Text(text.content)},
+                                                label: {
+                                                    Text(text.content).lineLimit(1)
+                                                })
+                                        }
+                                    }
+                                }
+                                else{
+                                    Text("No scan yet").font(.title)
+                                }
+                            }
+                                .navigationTitle("Scan OCR")
+                                .navigationBarItems(trailing: Button(action: {
+                                    self.showScannerSheet = true
+                                }, label: {
+                                    Image(systemName: "doc.text.viewfinder")
+                                        .font(.title)
+                                })
+                                .sheet(isPresented: $showScannerSheet, content: {
+                                    self.makeScannerView()
+                                })
+                                )
+                        }
+                
+                
+                
+                // testing for scanner
+             
                 TabView {
                     Group {
                         
@@ -68,34 +108,17 @@ struct ContentView: View {
                             }
                         
                         // link to edit page to add ingredients
-                        RecommendationsView()
-                            .tabItem() {
-                                Image(systemName: "plus")
-                                Text("Add")
-                                
-                            }
+//                        ScanAddView()
+//                            .tabItem() {
+//                                Image(systemName: "plus")
+//                                Text("Add")
+//                                
+//                            }
                     }
                     
                 }
             }
             
-        
-//            VStack {
-//                Button("Logout", action: self.logout)
-////                TabView {
-////                    Recommendations()
-////                        .tabItem() {
-////                            Image(systemName: "house")
-////                            Text("Home")
-////                        }
-////
-////                }
-//
-//                Text(user.name)
-//                Text(user.id)
-//                Text(user.email)
-
-  //          }
         } else {
             VStack {
                 Button("Login", action: self.login)
@@ -103,10 +126,23 @@ struct ContentView: View {
         }
 
     }
-       init() {
-           UITabBar.appearance().barTintColor = UIColor(Color(.white)) // custom color.
+    
+    init() {
+        UITabBar.appearance().barTintColor = UIColor(Color(.white)) // custom color.
 
-       }
+    }
+    
+    
+    private func makeScannerView()-> ScanAddView {
+            ScanAddView(completion: {
+                textPerPage in
+                if let outputText = textPerPage?.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines){
+                    let newScanData = ScanData(content: outputText)
+                    self.texts.append(newScanData)
+                }
+                self.showScannerSheet = false
+            })
+        }
 }
 
 extension ContentView {
@@ -136,6 +172,8 @@ extension ContentView {
             }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
