@@ -78,7 +78,7 @@ class TestSQL: ObservableObject {
             let cursor = try statement.execute()
             defer { cursor.close() }
 
-            print(cursor)
+            print("cursor", cursor)
             
             for row in cursor {
                 let columns = try row.get().columns

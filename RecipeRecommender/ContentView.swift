@@ -29,7 +29,7 @@ struct ContentView: View {
                 // red header with app name text, takes up the top section only
                 
                 ZStack{
-                    Color("redcolor").ignoresSafeArea()
+//                    Color("redcolor").ignoresSafeArea()
                     HStack {
                         
                         Text("Unified Grocery App").foregroundColor(Color.black)
