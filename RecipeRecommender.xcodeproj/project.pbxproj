@@ -21,6 +21,9 @@
 		7CB99CB32A4B76E400786DEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */; };
 		7CB99CBA2A4B770D00786DEE /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB99CB92A4B770D00786DEE /* RecommendationsView.swift */; };
 		7CEE058D2AB14D5E00F9BF1D /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE058C2AB14D5E00F9BF1D /* Structs.swift */; };
+		F27318DD2AA6704800BE5AAF /* ScanAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27318DC2AA6704800BE5AAF /* ScanAddView.swift */; };
+		F27318DF2AA671D500BE5AAF /* ScanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27318DE2AA671D500BE5AAF /* ScanData.swift */; };
+		F27318E12AA6743A00BE5AAF /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27318E02AA6743A00BE5AAF /* TextRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		7CB99CB22A4B76E400786DEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7CB99CB92A4B770D00786DEE /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
 		7CEE058C2AB14D5E00F9BF1D /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		F27318DC2AA6704800BE5AAF /* ScanAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanAddView.swift; sourceTree = "<group>"; };
+		F27318DE2AA671D500BE5AAF /* ScanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanData.swift; sourceTree = "<group>"; };
+		F27318E02AA6743A00BE5AAF /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 			children = (
 				7C564EC72A68658800942014 /* Info.plist */,
 				7C564ECB2A68668D00942014 /* Auth0.plist */,
+				F27318DE2AA671D500BE5AAF /* ScanData.swift */,
+				F27318DC2AA6704800BE5AAF /* ScanAddView.swift */,
+				F27318E02AA6743A00BE5AAF /* TextRecognizer.swift */,
 				7CB99CAB2A4B76E300786DEE /* RecipeRecommenderApp.swift */,
 				7CB99CAD2A4B76E300786DEE /* ContentView.swift */,
 				7C3E0C252AA6654B00F22137 /* AllRecipesView.swift */,
@@ -187,12 +196,15 @@
 				7CEE058D2AB14D5E00F9BF1D /* Structs.swift in Sources */,
 				7C379EEE2A4C8D7A006A9451 /* TestSQL.swift in Sources */,
 				7CB99CAE2A4B76E300786DEE /* ContentView.swift in Sources */,
+				F27318E12AA6743A00BE5AAF /* TextRecognizer.swift in Sources */,
 				7CB99CBA2A4B770D00786DEE /* RecommendationsView.swift in Sources */,
 				7C3E0C262AA6654B00F22137 /* AllRecipesView.swift in Sources */,
 				7C3E0C282AA6655F00F22137 /* FridgeView.swift in Sources */,
+				F27318DD2AA6704800BE5AAF /* ScanAddView.swift in Sources */,
 				7C564ECE2A68686B00942014 /* User.swift in Sources */,
 				7C3E0C2A2AA6703900F22137 /* Server.swift in Sources */,
 				7CB99CAC2A4B76E300786DEE /* RecipeRecommenderApp.swift in Sources */,
+				F27318DF2AA671D500BE5AAF /* ScanData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeRecommender/Preview Content\"";
+				DEVELOPMENT_TEAM = 6JVL9XXT7F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeRecommender/Info.plist;
@@ -350,6 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeRecommender/Preview Content\"";
+				DEVELOPMENT_TEAM = 6JVL9XXT7F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RecipeRecommender/Info.plist;
