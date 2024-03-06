@@ -1,5 +1,5 @@
 //
-//  ScanAddView.swift
+//  Scanner.swift
 //  RecipeRecommender
 //
 //  Created by Travis Tran on 9/4/23.
@@ -8,7 +8,7 @@
 import VisionKit
 import SwiftUI
 
-struct ScanAddView: UIViewControllerRepresentable {
+struct Scanner: UIViewControllerRepresentable {
     private let completionHandler: ([String]?) -> Void
      
     init(completion: @escaping ([String]?) -> Void) {
@@ -17,13 +17,13 @@ struct ScanAddView: UIViewControllerRepresentable {
      
     typealias UIViewControllerType = VNDocumentCameraViewController
      
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ScanAddView>) -> VNDocumentCameraViewController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<Scanner>) -> VNDocumentCameraViewController {
         let viewController = VNDocumentCameraViewController()
         viewController.delegate = context.coordinator
         return viewController
     }
      
-    func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: UIViewControllerRepresentableContext<ScanAddView>) {}
+    func updateUIViewController(_ uiViewController: VNDocumentCameraViewController, context: UIViewControllerRepresentableContext<Scanner>) {}
      
     func makeCoordinator() -> Coordinator {
         return Coordinator(completion: completionHandler)
