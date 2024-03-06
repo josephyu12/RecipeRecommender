@@ -1,5 +1,5 @@
 //
-//  ScanAddView.swift
+//  Scanner.swift
 //  RecipeRecommender
 //
 //  Created by Travis Tran on 9/4/23.

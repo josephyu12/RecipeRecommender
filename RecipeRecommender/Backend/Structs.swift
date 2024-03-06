@@ -29,3 +29,12 @@ struct Recipe: Identifiable, Codable {
     var sugars_g: String?
     var fat_g: String?
 }
+
+struct Ingredient: Identifiable, Codable {
+    var id: Int
+    var name: String
+    var amount: String?
+    var amount_unit: String?
+    var category: String?
+    var expiration: Date?
+}
