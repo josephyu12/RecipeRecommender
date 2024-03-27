@@ -14,18 +14,18 @@ extension UIScreen{
     static let screenSize = UIScreen.main.bounds.size
 }
 
+
 struct ContentView: View {
 
-    @State var user: User?
+    @State var user: User? {
+        didSet {
+            updateUserInfo()
+        }
+    }
 
     var body: some View {
 
         if let user = self.user {
-            
-            Text(user.email)
-            Text(user.id)
-            
-            let _ = print(user.id)
         
             VStack(spacing: 0) {
                 
@@ -96,6 +96,10 @@ struct ContentView: View {
     init() {
         UITabBar.appearance().barTintColor = UIColor(Color(.white)) // custom color.
 
+    }
+    
+    private func updateUserInfo() {
+        Server.shared.updateUserInfoAndInitialRun(user: user!)
     }
     
 }
