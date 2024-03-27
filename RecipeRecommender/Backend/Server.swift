@@ -9,10 +9,20 @@ import Foundation
 
 class Server: ObservableObject {
     
-//    @Published var globalUser = User()
-    
     @Published var allRecipes = [Recipe]()
     @Published var fridgeItems = [Ingredient]()
+    
+    var userEmail = ""
+    var userID = ""
+    
+    static let shared = Server()
+    
+    func updateUserInfoAndInitialRun(user: User) {
+        userEmail = user.email
+        userID = user.id
+        getAllRecipes()
+        getFridgeItems()
+    }
     
     func getAllRecipes() {
         
@@ -25,7 +35,7 @@ class Server: ObservableObject {
                 let jsonString = String(data: data, encoding: .utf8)
                 
 //                print(jsonString)
-//                
+
 //                print(data)
                 
                 do {
@@ -43,10 +53,10 @@ class Server: ObservableObject {
             }
         }
         
-        print("starting get all recipes")
         getAllRecipesTask.resume()
         
     }
+    
     
     func getFridgeItems() {
         
@@ -54,28 +64,26 @@ class Server: ObservableObject {
         
         var request = URLRequest(url: fridgeItemsURL)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+//        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        let parameters: [String: Any] = [
-            "username": 13,
-            "name": "Jack & Jill"
-        ]
-//        request.httpBody = parameters.percentEncoded()
+        let postString = "email=\(userEmail)&id=\(userID)"
+        request.httpBody = postString.data(using: .utf8)
+        let getFridgeItemsTask = URLSession.shared.dataTask(with: request) { data, response, error in
 
-        let getFridgeItemsTask = URLSession.shared.dataTask(with: fridgeItemsURL) { data, response, error in
-//            print("this is data", data)
             if let data = data {
                 
                 let jsonString = String(data: data, encoding: .utf8)
-                
-//                print(jsonString)
-//
-//                print(data)
                 
                 do {
                     
                     let decoder = JSONDecoder()
                     self.fridgeItems = try decoder.decode([Ingredient].self, from: data)
+                    
+                    for item in self.fridgeItems {
+                        print("printing item")
+                        print(item)
+                    }
                 
                 } catch {
                     print(String(describing: error))
@@ -86,7 +94,6 @@ class Server: ObservableObject {
             }
         }
         
-        print("starting get all fridge items")
         getFridgeItemsTask.resume()
         
     }

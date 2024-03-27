@@ -15,7 +15,7 @@ struct FridgeView: View {
         
         VStack {
             HStack{
-                Text("All Recipes")
+                Text("All Fridge Items")
                     .font(.title)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
@@ -31,6 +31,8 @@ struct FridgeView: View {
             ScrollView {
                 
                 ForEach(server.fridgeItems) {item in
+                    
+                    let _ = print(item)
                     
                                     HStack {
                     
