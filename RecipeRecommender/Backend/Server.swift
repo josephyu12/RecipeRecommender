@@ -21,7 +21,7 @@ class Server: ObservableObject {
         userEmail = user.email
         userID = user.id
         getAllRecipes()
-        getFridgeItems()
+        getFridgeItems(userEmailParam: userEmail, userIDParam: userID)
     }
     
     func getAllRecipes() {
@@ -58,7 +58,7 @@ class Server: ObservableObject {
     }
     
     
-    func getFridgeItems() {
+    func getFridgeItems(userEmailParam: String, userIDParam: String) {
         
         let fridgeItemsURL = URL(string: "https://recipes.outpond.com/api/getFridgeItems")!
         
@@ -67,7 +67,7 @@ class Server: ObservableObject {
 //        request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
-        let postString = "email=\(userEmail)&id=\(userID)"
+        let postString = "email=\(userEmailParam)&id=\(userIDParam)"
         request.httpBody = postString.data(using: .utf8)
         let getFridgeItemsTask = URLSession.shared.dataTask(with: request) { data, response, error in
 
@@ -78,11 +78,15 @@ class Server: ObservableObject {
                 do {
                     
                     let decoder = JSONDecoder()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ss.SSS'Z'"
+                    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+                    
                     self.fridgeItems = try decoder.decode([Ingredient].self, from: data)
                     
                     for item in self.fridgeItems {
                         print("printing item")
-                        print(item)
+                        print(item.name)
                     }
                 
                 } catch {

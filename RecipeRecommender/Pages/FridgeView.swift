@@ -11,6 +11,8 @@ struct FridgeView: View {
     
     @ObservedObject var server = Server()
     
+    @EnvironmentObject var userClass: UserInformation
+    
     var body: some View {
         
         VStack {
@@ -32,7 +34,7 @@ struct FridgeView: View {
                 
                 ForEach(server.fridgeItems) {item in
                     
-                    let _ = print(item)
+                    let _ = print(item.name)
                     
                                     HStack {
                     
@@ -72,7 +74,7 @@ struct FridgeView: View {
     }
     
     init() {
-        server.getFridgeItems()
+        server.getFridgeItems(userEmailParam: userClass.user!.email, userIDParam: userClass.user!.id)
     }
     
 }
