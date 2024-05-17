@@ -14,18 +14,24 @@ extension UIScreen{
     static let screenSize = UIScreen.main.bounds.size
 }
 
+class UserInformation: ObservableObject {
+    @Published var user: User?
+}
+
 
 struct ContentView: View {
+    
+    @StateObject var userClass: UserInformation
 
-    @State var user: User? {
-        didSet {
-            updateUserInfo()
-        }
-    }
+//    @State var user: User? {
+//        didSet {
+//            updateUserInfo()
+//        }
+//    }
 
     var body: some View {
 
-        if let user = self.user {
+        if let user = userClass.user {
         
             VStack(spacing: 0) {
                 
@@ -35,13 +41,14 @@ struct ContentView: View {
 //                    Color("redcolor").ignoresSafeArea()
                     HStack {
                         
-                        Text("Unified Grocery App").foregroundColor(Color.black)
+                        Text("Recipe Recommender").foregroundColor(Color.black)
                             .padding(.leading).font(.system(size:24))
 
                         Spacer()
 
                     }
                 }
+                
                 .padding(0.0)
                 .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/20)
                 
@@ -95,12 +102,11 @@ struct ContentView: View {
     
     init() {
         UITabBar.appearance().barTintColor = UIColor(Color(.white)) // custom color.
-
     }
     
-    private func updateUserInfo() {
-        Server.shared.updateUserInfoAndInitialRun(user: user!)
-    }
+//    private func updateUserInfo() {
+//        Server.shared.updateUserInfoAndInitialRun(user: user!)
+//    }
     
 }
 
@@ -111,7 +117,7 @@ extension ContentView {
             .start { result in
                 switch result {
                 case .success(let credentials):
-                    self.user = User(from: credentials.idToken)
+                    userClass.user = User(from: credentials.idToken)
                 case .failure(let error):
                     print("Failed with: \(error)")
                 }
@@ -124,7 +130,7 @@ extension ContentView {
             .clearSession { result in
                 switch result {
                 case .success:
-                    self.user = nil
+                    userClass.user = nil
                 case .failure(let error):
                     print("Failed with: \(error)")
                 }
